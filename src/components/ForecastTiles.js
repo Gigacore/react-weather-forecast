@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class ForecastTiles extends Component {
+const ForeCastTiles = ({ forecasts }) => {
 
   // Groups data by date and returns an array of 5-day forecast
-  groupByDays = data => {
+  const groupByDays = data => {
     const sortByDate = data.reduce(function (obj, item) {
       const forecastDate = item.dt_txt.substr(0,10);
     
@@ -20,7 +20,7 @@ export default class ForecastTiles extends Component {
   }
 
   // Returns week of the day
-  getDayInfo = data => {
+  const getDayInfo = data => {
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
     const day = new Date(data.forecasts[0].dt * 1000).getDay();
     
@@ -28,13 +28,13 @@ export default class ForecastTiles extends Component {
   }
 
   // Fetches the icon using the icon code available in the forecast data.
-  getIcon = data => {
+  const getIcon = data => {
     const icon = `http://openweathermap.org/img/w/${data.forecasts[0].weather[0].icon}.png`;
     return icon;
   }
   
   // Gets the Minimum and Maximum temperatures of the day.
-  getInfo = data => {
+  const getInfo = data => {
     let max = new Array;
     let min = new Array;
     let humidity = new Array;
@@ -61,25 +61,25 @@ export default class ForecastTiles extends Component {
           {`Avg. Humidity: ${Math.floor(avgHumdity)}%`}
         </div>
       </div>
-    )
-  }
-  
-  render() {
-    const { forecasts } = this.props;
-    const tiles = this.groupByDays(forecasts);
-
-    return (
-      <div className="forecast-tiles">
-        {tiles.map((item, i) => (
-          <div className="forecast-tile" key={i}>
-            <div className="icon">
-              <img src={this.getIcon(item)} />
-              {this.getDayInfo(item)}
-            </div>
-            {this.getInfo(item)}
-          </div>
-        ))}
-      </div>
     );
-  }
-}
+  };
+
+  // const { forecasts } = props;
+  const tiles = groupByDays(forecasts);
+
+  return (
+    <div className="forecast-tiles">
+      {tiles.map((item, i) => (
+        <div className="forecast-tile" key={i}>
+          <div className="icon">
+            <img src={getIcon(item)} />
+            {getDayInfo(item)}
+          </div>
+          {getInfo(item)}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ForeCastTiles;
