@@ -132,4 +132,17 @@ body {
       }
     }
   }
+
+  .fork {
+    margin: 30px; 
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    
+    a {
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
 }

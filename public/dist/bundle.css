@@ -106,3 +106,12 @@ body {
         .weather-forecast-wrapper .forecast-tiles .forecast-tile .weather-info .more-info {
           padding: 0 10px;
           font-size: 12px; }
+  .weather-forecast-wrapper .fork {
+    margin: 30px;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase; }
+    .weather-forecast-wrapper .fork a {
+      color: #fff;
+      text-decoration: none;
+      text-align: center; }

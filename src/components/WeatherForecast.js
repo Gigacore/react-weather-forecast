@@ -15,7 +15,11 @@ export default class WeatherForecast extends Component {
           <h2 className="city-name">{name}, {country}</h2>
         </header>
         <ForecastTiles forecasts={list} />
+
+        <div className="fork">
+          <a href="https://github.com/Gigacore/react-weather-forecast" target="_blank">Fork it on Github</a>
+        </div> 
       </div>
-    )
+    );
   }
 }
