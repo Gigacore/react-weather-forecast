@@ -1,6 +1,6 @@
 import React from "react";
 
-const ForeCastTiles = ({ forecasts }) => {
+const ForecastTiles = ({ forecasts }) => {
 
   // Groups data by date and returns an array of 5-day forecast
   const groupByDays = data => {
@@ -79,4 +79,4 @@ const ForeCastTiles = ({ forecasts }) => {
   );
 };
 
-export default ForeCastTiles;
+export default ForecastTiles;
