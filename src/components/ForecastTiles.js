@@ -22,9 +22,7 @@ const ForecastTiles = ({ forecasts }) => {
   // Returns week of the day
   const getDayInfo = data => {
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-    const day = new Date(data.forecasts[0].dt * 1000).getDay();
-    
-    return daysOfWeek[day];
+    return daysOfWeek[new Date(data.forecasts[0].dt * 1000).getDay()];
   };
 
   // Fetches the icon using the icon code available in the forecast data.
@@ -47,6 +45,7 @@ const ForecastTiles = ({ forecasts }) => {
       max: Math.max(...max),
     };
 
+    // Gets the day's average humdity
     const avgHumdity = humidity.reduce((prev, next) => prev + next) / humidity.length;
 
     return (
@@ -61,12 +60,17 @@ const ForecastTiles = ({ forecasts }) => {
     );
   };
 
-  // const { forecasts } = props;
   const tiles = groupByDays(forecasts);
+  
+  // EDGE CASE
+  // When the web service returns data for 6 calendar days during evenings as a result of offset, 
+  // this ensures that we are showing only 5-days of forecast.
+  
+  const trimmedTiles = (tiles.length > 5) ? tiles.slice(0, 5) : tiles;
 
   return (
     <div className="forecast-tiles">
-      {tiles.map((item, i) => (
+      {trimmedTiles.map((item, i) => (
         <div className="forecast-tile" key={i}>
           <div className="icon">
             <img src={getIcon(item)} />
