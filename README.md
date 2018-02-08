@@ -26,6 +26,7 @@ https://www.gigacore.in/demos/react-weather-forecast/
 * Display higher-level of weather information such as Wind Speed, Precipitation etc
 * Fix lint issues and config the eslintrc to support "no-vars-used" for Imports
 * Use a proper loading spinner icon on page load
+* Identify and address edgecases.
 * Better and more functional UI
 * Revisit the code to improve performance. Such as sorting, looping, searching etc.
 * Prevent fetching new data on every refresh by caching the data for a set duration of session.

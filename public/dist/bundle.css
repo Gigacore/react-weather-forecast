@@ -70,9 +70,13 @@ body {
       padding: 30px 0 0 0;
       text-transform: uppercase; }
     .weather-forecast-wrapper header .city-name {
-      font-size: 20px;
+      font-size: 13px;
       padding: 10px;
-      text-transform: capitalize; }
+      display: inline-block;
+      background: #283593;
+      border-radius: 10px;
+      margin: 30px 0 0 0;
+      text-transform: uppercase; }
   .weather-forecast-wrapper .forecast-tiles {
     width: 100%; }
     .weather-forecast-wrapper .forecast-tiles .forecast-tile {
