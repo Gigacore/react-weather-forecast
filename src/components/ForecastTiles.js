@@ -17,7 +17,7 @@ const ForeCastTiles = ({ forecasts }) => {
     });
     
     return grouppedForecast;
-  }
+  };
 
   // Returns week of the day
   const getDayInfo = data => {
@@ -25,13 +25,10 @@ const ForeCastTiles = ({ forecasts }) => {
     const day = new Date(data.forecasts[0].dt * 1000).getDay();
     
     return daysOfWeek[day];
-  }
+  };
 
   // Fetches the icon using the icon code available in the forecast data.
-  const getIcon = data => {
-    const icon = `http://openweathermap.org/img/w/${data.forecasts[0].weather[0].icon}.png`;
-    return icon;
-  }
+  const getIcon = data => `http://openweathermap.org/img/w/${data.forecasts[0].weather[0].icon}.png`;
   
   // Gets the Minimum and Maximum temperatures of the day.
   const getInfo = data => {
@@ -55,10 +52,10 @@ const ForeCastTiles = ({ forecasts }) => {
     return (
       <div className="weather-info">
         <div className="min-max">
-          <strong>{`${minMax.max}°C`}</strong> / {`${minMax.min}°C`}
+          <strong>{`${Math.round(minMax.max)}°C`}</strong> / {`${Math.round(minMax.min)}°C`}
         </div>
         <div className="more-info">
-          {`Avg. Humidity: ${Math.floor(avgHumdity)}%`}
+          {`Avg. Humidity: ${Math.round(avgHumdity)}%`}
         </div>
       </div>
     );
