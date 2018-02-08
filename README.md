@@ -28,6 +28,7 @@ https://www.gigacore.in/demos/react-weather-forecast/
 * Use a proper loading spinner icon on page load
 * Better and more functional UI
 * Revisit the code to improve performance. Such as sorting, looping, searching etc.
+* Prevent fetching new data on every refresh by caching the data for a set duration of session.
 
 ### Tech Stack
 
