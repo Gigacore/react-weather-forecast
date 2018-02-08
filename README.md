@@ -3,6 +3,9 @@
 # 5-Day Weather Forecast
 A simple application to display 5-day weather forecast using the OpenWeatherMap API.
 
+### Demo 
+https://www.gigacore.in/demos/react-weather-forecast/
+
 ## Pre-requisites 
 * Node.js 6.1 and above
 
@@ -13,11 +16,23 @@ A simple application to display 5-day weather forecast using the OpenWeatherMap 
 * ```npm start```
 * Open ```http://localhost:8080``` to see the app.
 
+### TODOs
+* Display detailed multiple forecasts across the day.
+* Add an option to choose Units in either Metric or Imperial.
+* Provide an option for user to choose location of their choice.
+* Display higher-level of weather information such as Wind Speed, Precipitation etc
+* Fix lint issues and config the eslintrc to support "no-vars-used" for Imports
+* Use a proper loading spinner icon on page load
+* Better and more functional UI
+* Revisit the code to improve performance. Such as sorting, looping, searching etc.
+
 ### Tech Stack
 
 * React.js
 * Redux
-* ES6g
+* JavaScript (ES6)
+* HTML5
+* SASS
 
 #### The MIT License (MIT)
 MIT © 2017 Santhosh Sundar
