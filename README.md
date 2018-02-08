@@ -16,6 +16,9 @@ https://www.gigacore.in/demos/react-weather-forecast/
 * ```npm start```
 * Open ```http://localhost:8080``` to see the app.
 
+## Build
+* ```webpack --watch``` 
+
 ### TODOs
 * Display detailed multiple forecasts across the day.
 * Add an option to choose Units in either Metric or Imperial.
