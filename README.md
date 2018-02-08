@@ -22,7 +22,7 @@ https://www.gigacore.in/demos/react-weather-forecast/
 ### TODOs
 * Display detailed multiple forecasts across the day.
 * Add an option to choose Units in either Metric or Imperial.
-* Provide an option for user to choose location of their choice.
+* Provide an option for user to choose location of their choice by Name, Lat/Long etc
 * Display higher-level of weather information such as Wind Speed, Precipitation etc
 * Fix lint issues and config the eslintrc to support "no-vars-used" for Imports
 * Use a proper loading spinner icon on page load
