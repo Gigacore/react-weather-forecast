@@ -22,7 +22,9 @@ class App extends Component {
 
     return (
       forecast === null ? (
-        <div className="loading">Loading...</div>
+        <div className="loading">
+          <div className="spinner"></div>
+        </div>
       ) : (
         <WeatherForecast data={forecast} />
       )

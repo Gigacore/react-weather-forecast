@@ -57,6 +57,22 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.loading {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .spinner {
+    background: url('https://www.gigacore.in/demos/react-weather-forecast/assets/loader.gif') no-repeat;
+    background-size: 100%;
+    height: 100px;
+    width: 100px;
+  }
+}
+
 .weather-forecast-wrapper {
   margin: 0 auto;
   width: 40%;
