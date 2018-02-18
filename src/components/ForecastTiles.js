@@ -2,33 +2,32 @@ import React from "react";
 
 const ForecastTiles = ({ forecasts }) => {
 
-  // Groups data by date and returns an array of 5-day forecast
+  // Filters the data by date and returns an Object containing a list of 5-day forecast
   const groupByDays = data => {
-    // Sorts the data by date and returns an Object containing key:value pairs of forecasts
-    const sortByDate = data.reduce(function (obj, item) {
+    return (data.reduce((list, item) => {
       const forecastDate = item.dt_txt.substr(0,10);
-    
-      obj[forecastDate] = obj[forecastDate] || [];
-      obj[forecastDate].push(item);
-      return obj;
-    }, {});
+      list[forecastDate] = list[forecastDate] || [];
+      list[forecastDate].push(item);
 
-    // Returns an array of objects containing forecast data groupped by day that can be later iterable to display tiles
-    const grouppedForecast = Object.keys(sortByDate).map(key => {
-      return {day: key, forecasts: sortByDate[key]};
-    });
+      return list;
+    }, {}));
     
-    return grouppedForecast;
+    // TODO: Benchmark the below against Object.values() and determine the fastest execution method
+    // Returns arrays containing forecast by mapping values to key
+    // const grouppedForecast = Object.keys(filterByDate).map(key => {
+    //   return filterByDate[key];
+    // });
+    //return Object.values(filterByDate);
   };
 
   // Returns week of the day
   const getDayInfo = data => {
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-    return daysOfWeek[new Date(data.forecasts[0].dt * 1000).getDay()];
+    return daysOfWeek[new Date(data[0].dt * 1000).getDay()];
   };
 
   // Fetches the icon using the icon code available in the forecast data.
-  const getIcon = data => `https://openweathermap.org/img/w/${data.forecasts[0].weather[0].icon}.png`;
+  const getIcon = data => `https://openweathermap.org/img/w/${data[0].weather[0].icon}.png`;
   
   // Gets the Minimum and Maximum temperatures of the day.
   const getInfo = data => {
@@ -36,7 +35,7 @@ const ForecastTiles = ({ forecasts }) => {
     let min = new Array;
     let humidity = new Array;
 
-    data.forecasts.map(item => {
+    data.map(item => {
       max.push(item.main.temp_max);
       min.push(item.main.temp_min);
       humidity.push(item.main.humidity);
@@ -48,8 +47,9 @@ const ForecastTiles = ({ forecasts }) => {
     };
 
     // Gets the day's average humdity
-    const avgHumdity = humidity.reduce((prev, next) => prev + next) / humidity.length;
+    const avgHumdity = humidity.reduce((curr, next) => curr + next) / humidity.length;
 
+    // Render prop template
     return (
       <div className="weather-info">
         <div className="min-max">
@@ -62,14 +62,13 @@ const ForecastTiles = ({ forecasts }) => {
     );
   };
 
-  const tiles = groupByDays(forecasts);
+  const tiles = Object.values(groupByDays(forecasts))
 
   console.log(tiles);
-  
+
   // EDGE CASE
   // When the web service returns data for 6 calendar days during evenings as a result of offset, 
   // this ensures that we are showing only 5-days of forecast.
-  
   const forecastTiles = tiles.length > 5 ? tiles.slice(0, 5) : tiles;
 
   return (
