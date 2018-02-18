@@ -5,13 +5,12 @@ import { getData } from "./actions/weatherStation";
 
 import WeatherForecast from './components/WeatherForecast';
 
-@connect((store) => {  
+@connect(store => {  
   return {
     forecast: store.weatherStation.data
   }
 })
-
-class App extends Component {
+export default class App extends Component {
 
   componentDidMount() {
     this.props.dispatch(getData());
@@ -30,6 +29,4 @@ class App extends Component {
       )
     );
   }
-}
-
-export default App;
+};

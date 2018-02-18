@@ -26,4 +26,6 @@ WeatherForecast.defaultProps = {
   appTitle: "5-Day Weather Forecast"
 };
 
+// TODO: Add PropType validations
+
 export default WeatherForecast;
