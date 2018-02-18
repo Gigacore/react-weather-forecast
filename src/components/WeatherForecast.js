@@ -1,7 +1,7 @@
-import React from "react";
+import React, { PropTypes } from "react";
 import ForecastTiles from "./ForecastTiles";
 
-const WeatherForecast = ({ data }) => {
+const WeatherForecast = ({ data, appTitle }) => {
   
   const { city, list } = data;
   const { name, country } = city;
@@ -9,7 +9,7 @@ const WeatherForecast = ({ data }) => {
   return (
     <div className="weather-forecast-wrapper">
       <header>
-        <h1 className="heading">5-Day Weather Forecast</h1>
+        <h1 className="heading">{appTitle}</h1>
         <h2 className="city-name">{name}, {country}</h2>
       </header>
       
@@ -20,6 +20,10 @@ const WeatherForecast = ({ data }) => {
       </div> 
     </div>
   );
+};
+
+WeatherForecast.defaultProps = {
+  appTitle: "5-Day Weather Forecast"
 };
 
 export default WeatherForecast;
