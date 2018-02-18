@@ -10,5 +10,5 @@ export function fetchData() {
       .catch((err) => {
         dispatch({type: FETCH_DATA_REJECTED, payload: err}); // Error handling
       });
-  }
+  };
 }
