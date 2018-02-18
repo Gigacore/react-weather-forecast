@@ -4,6 +4,7 @@ const ForecastTiles = ({ forecasts }) => {
 
   // Groups data by date and returns an array of 5-day forecast
   const groupByDays = data => {
+    // Sorts the data by date and returns an Object containing key:value pairs of forecasts
     const sortByDate = data.reduce(function (obj, item) {
       const forecastDate = item.dt_txt.substr(0,10);
     
@@ -12,6 +13,7 @@ const ForecastTiles = ({ forecasts }) => {
       return obj;
     }, {});
 
+    // Returns an array of objects containing forecast data groupped by day that can be later iterable to display tiles
     const grouppedForecast = Object.keys(sortByDate).map(key => {
       return {day: key, forecasts: sortByDate[key]};
     });
@@ -61,16 +63,18 @@ const ForecastTiles = ({ forecasts }) => {
   };
 
   const tiles = groupByDays(forecasts);
+
+  console.log(tiles);
   
   // EDGE CASE
   // When the web service returns data for 6 calendar days during evenings as a result of offset, 
   // this ensures that we are showing only 5-days of forecast.
   
-  const trimmedTiles = (tiles.length > 5) ? tiles.slice(0, 5) : tiles;
+  const forecastTiles = tiles.length > 5 ? tiles.slice(0, 5) : tiles;
 
   return (
     <div className="forecast-tiles">
-      {trimmedTiles.map((item, i) => (
+      {forecastTiles.map((item, i) => (
         <div className="forecast-tile" key={i}>
           <div className="icon">
             <img src={getIcon(item)} />
