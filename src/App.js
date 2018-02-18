@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { getData } from "./actions/weatherStation";
+import { fetchData } from "./actions/weatherStation";
 
 import WeatherForecast from './components/WeatherForecast';
 
@@ -13,7 +13,7 @@ import WeatherForecast from './components/WeatherForecast';
 export default class App extends Component {
 
   componentDidMount() {
-    this.props.dispatch(getData());
+    this.props.dispatch(fetchData());
   }
 
   render() {
@@ -29,4 +29,4 @@ export default class App extends Component {
       )
     );
   }
-};
+}

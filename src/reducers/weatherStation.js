@@ -14,7 +14,7 @@ export default function reducer(state = {
       break;
     }
     case FETCH_DATA_REJECTED: {
-      console.error(`Could not fetch the data from webservice. ${action.payload}.`);
+      console.error(`Could not fetch the data from webservice. ${action.payload}.`); // eslint-disable-line
       break;
     }
   }
