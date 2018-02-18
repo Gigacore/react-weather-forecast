@@ -26,7 +26,7 @@ const ForecastTiles = ({ forecasts }) => {
   };
 
   // Fetches the icon using the icon code available in the forecast data.
-  const getIcon = data => `http://openweathermap.org/img/w/${data.forecasts[0].weather[0].icon}.png`;
+  const getIcon = data => `https://openweathermap.org/img/w/${data.forecasts[0].weather[0].icon}.png`;
   
   // Gets the Minimum and Maximum temperatures of the day.
   const getInfo = data => {
