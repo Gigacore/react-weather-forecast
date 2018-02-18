@@ -1,14 +1,9 @@
-import { FETCH_DATA, FETCH_DATA_FULFILLED } from "../constants/ActionTypes";
+import { FETCH_DATA_FULFILLED, FETCH_DATA_REJECTED } from "../constants/ActionTypes";
 
 export default function reducer(state = {
   data: null
 }, action) {
   switch (action.type) {
-    case FETCH_DATA: {
-      return {
-        ...state
-      };
-    }
     case FETCH_DATA_FULFILLED: {
       if(state.data === null ) {
         return {
@@ -16,6 +11,10 @@ export default function reducer(state = {
           data: action.payload
         };
       }
+      break;
+    }
+    case FETCH_DATA_REJECTED: {
+      console.error(`Could not fetch the data from webservice. ${action.payload}.`);
       break;
     }
   }
