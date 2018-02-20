@@ -10,7 +10,7 @@ import WeatherForecast from './components/WeatherForecast';
     forecast: store.weatherStation.data
   }
 })
-export default class App extends Component {
+ class App extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchData());
@@ -30,3 +30,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default App;
