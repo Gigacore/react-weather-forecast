@@ -82,14 +82,25 @@ body {
       font-size: 25px;
       padding: 30px 0 0 0;
       text-transform: uppercase; }
-    .weather-forecast-wrapper header .city-name {
+  .weather-forecast-wrapper section.controls {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100px; }
+    .weather-forecast-wrapper section.controls input {
       font-size: 13px;
       padding: 10px;
       display: inline-block;
       background: #283593;
-      border-radius: 10px;
       margin: 30px 0 0 0;
+      border: none;
+      color: #fff;
+      width: 230px;
       text-transform: uppercase; }
+      .weather-forecast-wrapper section.controls input::placeholder {
+        color: #fff; }
+      .weather-forecast-wrapper section.controls input:focus::placeholder {
+        color: transparent; }
   .weather-forecast-wrapper .forecast-tiles {
     width: 100%; }
     .weather-forecast-wrapper .forecast-tiles .forecast-tile {
@@ -123,12 +134,13 @@ body {
         .weather-forecast-wrapper .forecast-tiles .forecast-tile .weather-info .more-info {
           padding: 0 10px;
           font-size: 12px; }
-  .weather-forecast-wrapper .fork {
-    margin: 30px;
-    text-align: center;
-    font-size: 12px;
-    text-transform: uppercase; }
-    .weather-forecast-wrapper .fork a {
-      color: #fff;
-      text-decoration: none;
-      text-align: center; }
+
+.fork {
+  margin: 30px;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase; }
+  .fork a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center; }

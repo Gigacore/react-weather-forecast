@@ -12,12 +12,14 @@ import WeatherForecast from './components/WeatherForecast';
 })
 export default class App extends Component {
 
+  // Fetching data for "London" by default for this exercise.
+  // TODO: Detect user location automatically. 
   componentDidMount() {
-    this.props.dispatch(fetchData());
+    this.props.dispatch(fetchData("london"));
   }
 
   render() {
-    const { forecast } = this.props; 
+    const { forecast } = this.props;
 
     return (
       forecast === null ? (
@@ -25,7 +27,12 @@ export default class App extends Component {
           <div className="spinner"></div>
         </div>
       ) : (
-        <WeatherForecast data={forecast} />
+        <div>
+          <WeatherForecast data={forecast} />
+          <div className="fork">
+            <a href="https://github.com/Gigacore/react-weather-forecast" target="_blank">Fork it on Github</a>
+          </div> 
+        </div>
       )
     );
   }

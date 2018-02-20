@@ -5,12 +5,10 @@ export default function reducer(state = {
 }, action) {
   switch (action.type) {
     case FETCH_DATA_FULFILLED: {
-      if(state.data === null ) {
-        return {
-          ...state,
-          data: action.payload
-        };
-      }
+      return {
+        ...state,
+        data: action.payload
+      };
       break;
     }
     case FETCH_DATA_REJECTED: {

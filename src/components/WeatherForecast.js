@@ -1,31 +1,21 @@
-import React, { PropTypes } from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+
 import ForecastTiles from "./ForecastTiles";
+import Dashboard from "./Dashboard";
 
-const WeatherForecast = ({ data, appTitle }) => {
+
+const WeatherForecast = ({ data }) => {
+
+    const { city, list } = data;
+    const { name } = city;
   
-  const { city, list } = data;
-  const { name, country } = city;
-
-  return (
-    <div className="weather-forecast-wrapper">
-      <header>
-        <h1 className="heading">{appTitle}</h1>
-        <h2 className="city-name">{name}, {country}</h2>
-      </header>
-      
-      <ForecastTiles forecasts={list} />
-
-      <div className="fork">
-        <a href="https://github.com/Gigacore/react-weather-forecast" target="_blank">Fork it on Github</a>
-      </div> 
-    </div>
-  );
+    return (
+      <div className="weather-forecast-wrapper">
+        <Dashboard city={name}/>
+        <ForecastTiles forecasts={list} />
+      </div>
+    );
 };
-
-WeatherForecast.defaultProps = {
-  appTitle: "5-Day Weather Forecast"
-};
-
-// TODO: Add PropType validations
 
 export default WeatherForecast;
