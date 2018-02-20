@@ -101,6 +101,8 @@ body {
         color: #fff; }
       .weather-forecast-wrapper section.controls input:focus::placeholder {
         color: transparent; }
+      .weather-forecast-wrapper section.controls input.search {
+        width: 30px; }
   .weather-forecast-wrapper .forecast-tiles {
     width: 100%; }
     .weather-forecast-wrapper .forecast-tiles .forecast-tile {

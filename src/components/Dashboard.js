@@ -7,7 +7,7 @@ export default class Dashboard extends Component {
 
   _updateCity = () => {
     const city = this.__cityInput.value;
-    this.props.dispatch(fetchData(city));
+    city.length !== 0 ? this.props.dispatch(fetchData(city)) : null;
   }
 
   _onkeyPress = e => {
@@ -26,7 +26,7 @@ export default class Dashboard extends Component {
         <section className="controls">
           <div>
             <input
-              type="search"
+              type="text"
               className="city-input"
               id="city-name"
               ref={input => {
@@ -35,6 +35,12 @@ export default class Dashboard extends Component {
               }}
               onKeyPress={this._onkeyPress}
               placeholder={city}
+            />
+            <input
+              type="button"
+              value="&gt;"
+              className="search"
+              onClick={this._updateCity}
             />
           </div>
         </section>
