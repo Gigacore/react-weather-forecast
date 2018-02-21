@@ -22,11 +22,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: "babel-loader",
-        options: {
-          presets: ["react", "stage-0", "es2015"],
-          plugins: ["transform-class-properties", "transform-decorators-legacy"]
-        }
+        loaders: "babel-loader"
       }
     ]
   },
