@@ -96,35 +96,57 @@ body {
     }
   }
 
-  section.controls {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    height: 100px;
+  .weather-dashboard {
+    text-align: center;
 
-    input {
-      font-size: 13px;
-      padding: 10px;
-      display: inline-block;
-      background: #283593;
-      margin: 30px 0 0 0;
-      border: none;
-      color: #fff;
-      width: 230px; 
-      text-transform: uppercase;
+    .error {
+      display: none;
+    }
 
-      &::placeholder {
+    section.controls {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      height: 100px;
+  
+      input {
+        font-size: 13px;
+        padding: 10px;
+        display: inline-block;
+        background: #283593;
+        margin: 30px 0 0 0;
+        border: none;
         color: #fff;
-      }
-
-      &:focus {
+        width: 230px; 
+        text-transform: uppercase;
+  
         &::placeholder {
-          color: transparent;
+          color: #fff;
+        }
+  
+        &:focus {
+          &::placeholder {
+            color: transparent;
+          }
+        }
+  
+        &.search {
+          width: 30px;
+        }
+      }
+    }
+
+    &.invalid-city {
+      section.controls {
+        input {
+          background: #ff1744;
         }
       }
 
-      &.search {
-        width: 30px;
+      .error {
+        display: block;
+        color: #ff1744;
+        padding: 0 0 30px 0;
       }
     }
   }

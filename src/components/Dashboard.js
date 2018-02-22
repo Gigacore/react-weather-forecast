@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchData } from "../actions/weatherStation";
 
-@connect((store) => store)
+@connect((store) => {
+  return {
+    status: store.weatherStation.status
+  }
+})
 export default class Dashboard extends Component {
 
   _updateCity = () => {
@@ -16,10 +20,11 @@ export default class Dashboard extends Component {
 
   render() {
 
-    const { city } = this.props;
+    const { city, status } = this.props;
+    const wrapperClass = (status === "failed") ? "weather-dashboard invalid-city" : "weather-dashboard";
 
     return (
-      <div className="weather-dashboard">
+      <div className={wrapperClass}>
         <header>
           <h1 className="heading">5-Day Weather Forecast</h1>
         </header>
@@ -45,6 +50,7 @@ export default class Dashboard extends Component {
             />
           </div>
         </section>
+        <span className="error">Please enter valid city name!</span>
       </div>
     );
   }
