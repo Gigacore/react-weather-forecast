@@ -15,9 +15,9 @@ describe("<ForecastTiles />", () => {
     expect(wrapper.hasClass("forecast-tiles")).toBe(true);
   });
 
-  // it("renders five forecast tiles", () => {
-  //   const wrapper = shallow(<ForecastTiles store={mockStore({})} forecasts={data.list}/>);
-  //   expect(wrapper.find("forecast-tiles")).to.have.length(5);
-  // });
+  it("renders five forecast tiles", () => {
+    const wrapper = render(<ForecastTiles store={mockStore({})} forecasts={data.list}/>);
+    expect(wrapper.children().length).toBe(5);
+  });
 
 });
