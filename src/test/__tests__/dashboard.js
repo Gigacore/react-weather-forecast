@@ -1,7 +1,8 @@
 import React from "react";
 import Enzyme from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import { shallow, mount, render } from "enzyme";
+import { render, mount, shallow } from "enzyme";
+
 import configureStore from "redux-mock-store";
 const mockStore = configureStore();
 
@@ -13,8 +14,8 @@ describe("<Dashboard />", () => {
     expect(wrapper.hasClass("weather-dashboard")).toBe(true);
   });
 
-  // it("should contain app title", () => {
-  //   const wrapper = shallow(<Dashboard store={mockStore({})}/>);
-  //   expect(wrapper.find(".heading"));
-  // });
+  it("should contain input field", () => {
+    const wrapper = render(<Dashboard store={mockStore({})}/>);
+    expect(wrapper.find(".city-input")).toHaveLength(1);
+  });
 });
