@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import ForecastTiles from "./ForecastTiles";
 import Dashboard from "./Dashboard";
 
-
 const WeatherForecast = ({ data }) => {
 
     const { city, list } = data;
