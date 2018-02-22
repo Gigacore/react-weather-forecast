@@ -24,19 +24,21 @@ From the root dir, run either of the following:
 
 ## Test
 
-* ```npm run test```
+* Unit testing can be done manually by executing ```npm run test```
+* Unit testing will be done automatically prior committing the updates to the repo
 
 ### TODOs
-* Display detailed multiple forecasts across the day.
-* Add an option to choose Units in either Metric or Imperial.
-* Provide an option for user to choose location of their choice by Name, Lat/Long etc
-* Display higher-level of weather information such as Wind Speed, Precipitation etc
-* Fix lint issues and config the eslintrc to support "no-vars-used" for Imports
-* Use a proper loading spinner icon on page load
-* Identify and address edgecases.
-* Better and more functional UI
-* Revisit the code to improve performance. Such as sorting, looping, searching etc.
-* Prevent fetching new data on every refresh by caching the data for a set duration of session.
+- [x] Provide an option for user to choose location of their choice by Name, Lat/Long etc
+- [x] Unit testing
+- [x] Identify and address edgecases.
+- [x] Revisit the code to improve performance. Such as sorting, looping, searching etc.
+- [x] Use a proper loading spinner icon on page load
+- [ ] Display detailed multiple forecasts across the day.
+- [ ] Add an option to choose Units in either Metric or Imperial.
+- [ ] Display higher-level of weather information such as Wind Speed, Precipitation etc
+- [ ] Fix lint issues and config the eslintrc to support "no-vars-used" for Imports
+- [ ] Better and more functional UI
+- [ ] Prevent fetching new data on every refresh by caching the data for a set duration of session.
 
 ### Tech Stack
 
