@@ -22,6 +22,10 @@ From the root dir, run either of the following:
 * ```webpack``` bundles all your updates to bundle.js and bundle.css in dist folder.
 * If you insist to automate the build upon appending changes to files, use ```webpack --watch``` 
 
+## Test
+
+* ```npm run test```
+
 ### TODOs
 * Display detailed multiple forecasts across the day.
 * Add an option to choose Units in either Metric or Imperial.
