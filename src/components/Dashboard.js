@@ -41,6 +41,7 @@ export default class Dashboard extends Component {
               value="&gt;"
               className="search"
               onClick={this._updateCity}
+              id="change-city-btn"
             />
           </div>
         </section>
