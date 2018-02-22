@@ -9,7 +9,7 @@ https://www.gigacore.in/demos/react-weather-forecast/
 ## Pre-requisites 
 * Node.js 6.1 and above
 
-## How to run
+## Run
 * Clone it
 * ```cd react-weather-forecast```
 * ```npm i```
@@ -47,7 +47,7 @@ From the root dir, run either of the following:
 * JavaScript (ES6)
 * HTML5
 * SASS
-
+* Jest + Enzyme
 
 #### The MIT License (MIT)
 MIT © 2018 Santhosh Sundar
