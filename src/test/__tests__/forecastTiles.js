@@ -7,7 +7,7 @@ import configureStore from "redux-mock-store";
 const mockStore = configureStore();
 
 import data from "./data/forecast.json";
-const { list } = data;
+const { list } = data.weatherStation.data;
 
 import ForecastTiles from "../../components/ForecastTiles";
 
