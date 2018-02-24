@@ -9,6 +9,7 @@ import { FETCH_DATA_FULFILLED, FETCH_DATA_REJECTED } from "../../constants/Actio
 import mockData from "./data/forecast.json";
 
 describe("data reducer", () => {
+  
   it("should return initial state", () => {
     expect(reducer(undefined, {})).toEqual({"weatherStation": {"data": null, "status": null}});
   });
