@@ -1,6 +1,6 @@
 import configureStore from "redux-mock-store";
 
-import { FETCH_DATA_FULFILLED } from "../../constants/ActionTypes";
+import { FETCH_DATA_FULFILLED, FETCH_DATA_REJECTED } from "../../constants/ActionTypes";
 
 import thunk from "redux-thunk";
 require("es6-promise").polyfill();
@@ -19,5 +19,16 @@ it("should execute fetchData and return the required action type", () => {
 
       // Expected action type from the action creator
       expect(actions[0].type).toEqual(FETCH_DATA_FULFILLED);
+    });
+});
+
+it("should reject the request if no city is being passed", () => {
+  const store = mockStore({});
+  return store.dispatch(fetchData(null))
+    .then(() => {
+      const actions = store.getActions();
+
+      // Expected action type from the action creator
+      expect(actions[0].type).toEqual(FETCH_DATA_REJECTED);
     });
 });
