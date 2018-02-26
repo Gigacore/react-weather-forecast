@@ -1,9 +1,8 @@
 import React from "react";
-import Enzyme from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
 
 import * as actions from "../../actions/weatherStation";
 import reducer from "../../reducers";
+
 import { FETCH_DATA_FULFILLED, FETCH_DATA_REJECTED } from "../../constants/ActionTypes";
 
 import mockData from "./data/forecast.json";
