@@ -11,11 +11,22 @@ import WeatherForecast from './components/WeatherForecast';
   }
 })
 export default class App extends Component {
-
-  // Fetching data for "London" by default for this exercise.
-  // TODO: Detect user location automatically. 
+  // Fetches data by using geolocation. If the user blocks, or if the browser does not support the API, 
+  // fallsback to default location of London
   componentDidMount() {
-    this.props.dispatch(fetchData("london"));
+    let method = '';
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.props.dispatch(fetchData(position.coords));
+      }, (error) => {
+        if(error.code === error.PERMISSION_DENIED) {
+          this.props.dispatch(fetchData("london"));
+        }
+      });  
+    } else {
+      this.props.dispatch(fetchData("london"));
+    }
   }
 
   render() {
