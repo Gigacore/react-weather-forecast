@@ -33,6 +33,7 @@ From the root dir, run either of the following:
 - [x] Identify and address edgecases.
 - [x] Revisit the code to improve performance. Such as sorting, looping, searching etc.
 - [x] Use a proper loading spinner icon on page load
+- [x] Detect location automatically
 - [ ] Display detailed multiple forecasts across the day.
 - [ ] Add an option to choose Units in either Metric or Imperial.
 - [ ] Display higher-level of weather information such as Wind Speed, Precipitation etc
