@@ -14,7 +14,7 @@ export default class App extends Component {
   // Fetches data by using geolocation. If the user blocks, or if the browser does not support the API, 
   // fallsback to default location of London
   componentDidMount() {
-    let method = '';
+    let method = "";
 
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
