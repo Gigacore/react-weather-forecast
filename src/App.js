@@ -21,7 +21,7 @@ export default class App extends Component {
           resolve(position.coords);
         }, (error) => {
           if(error.code === error.PERMISSION_DENIED) {
-            resolve("london");
+            console.error("Error detecting location.");
           }
         });
       }
