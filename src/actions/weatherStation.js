@@ -4,7 +4,6 @@ import { APP_ID } from "../constants/generalConstants";
 import axios from "axios";
 
 export const fetchData = (region) => (dispatch) => {
-  
   const { latitude, longitude } = region || {};
 
   const getDataByCity = `https://api.openweathermap.org/data/2.5/forecast?q=${region}&units=metric&appid=${APP_ID}`;

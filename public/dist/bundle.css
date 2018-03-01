@@ -106,7 +106,8 @@ body {
         .weather-forecast-wrapper .weather-dashboard section.controls input:focus::placeholder {
           color: transparent; }
         .weather-forecast-wrapper .weather-dashboard section.controls input.search {
-          width: 30px; }
+          width: 30px;
+          cursor: pointer; }
     .weather-forecast-wrapper .weather-dashboard.invalid-city section.controls input {
       background: #ff1744; }
     .weather-forecast-wrapper .weather-dashboard.invalid-city .error {
