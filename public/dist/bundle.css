@@ -76,11 +76,10 @@ body {
     .weather-forecast-wrapper {
       width: 100%; } }
   .weather-forecast-wrapper header {
-    text-align: center;
-    padding: 20px 0; }
+    text-align: center; }
     .weather-forecast-wrapper header .heading {
-      font-size: 25px;
-      padding: 30px 0 0 0;
+      font-size: 22px;
+      padding: 25px 0 0 0;
       text-transform: uppercase; }
   .weather-forecast-wrapper .weather-dashboard {
     text-align: center; }
@@ -88,7 +87,7 @@ body {
       display: none; }
     .weather-forecast-wrapper .weather-dashboard section.controls {
       display: flex;
-      align-content: center;
+      align-items: center;
       justify-content: center;
       height: 100px; }
       .weather-forecast-wrapper .weather-dashboard section.controls input {
@@ -96,7 +95,6 @@ body {
         padding: 10px;
         display: inline-block;
         background: #283593;
-        margin: 30px 0 0 0;
         border: none;
         color: #fff;
         width: 230px;
