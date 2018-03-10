@@ -7,7 +7,7 @@ A simple application to display 5-day weather forecast using the OpenWeatherMap 
 https://www.gigacore.in/demos/react-weather-forecast/
 
 ## Pre-requisites 
-* Node.js 6.1 and above
+* Node.js 9.8.0 and above
 
 ## Run
 * Clone it
