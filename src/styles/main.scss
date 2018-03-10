@@ -157,7 +157,6 @@ body {
       height: 100px;
       background: #303f9f;
       margin: 3px;
-      display: flex;
 
       .icon {
         width: 100px;
@@ -193,6 +192,10 @@ body {
           padding: 0 10px;
           font-size: 12px;
         }
+      }
+
+      .primary-info {
+        display: flex;
       }
     }
   }

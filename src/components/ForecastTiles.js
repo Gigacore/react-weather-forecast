@@ -67,11 +67,16 @@ const ForecastTiles = ({ forecasts }) => {
     <div className="forecast-tiles">
       {forecastTiles.map((item, i) => (
         <div className="forecast-tile" key={i}>
-          <div className="icon">
-            <img src={getIcon(item)} />
-            {getDayInfo(item)}
+          <div className="primary-info">
+            <div className="icon">
+              <img src={getIcon(item)} />
+              {getDayInfo(item)}
+            </div>
+            {getInfo(item)}
           </div>
-          {getInfo(item)}
+          <div className="detailed-info">
+          
+          </div>
         </div>
       ))}
     </div>

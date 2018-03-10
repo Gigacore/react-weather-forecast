@@ -117,8 +117,7 @@ body {
     .weather-forecast-wrapper .forecast-tiles .forecast-tile {
       height: 100px;
       background: #303f9f;
-      margin: 3px;
-      display: flex; }
+      margin: 3px; }
       .weather-forecast-wrapper .forecast-tiles .forecast-tile .icon {
         width: 100px;
         height: 100px;
@@ -145,6 +144,8 @@ body {
         .weather-forecast-wrapper .forecast-tiles .forecast-tile .weather-info .more-info {
           padding: 0 10px;
           font-size: 12px; }
+      .weather-forecast-wrapper .forecast-tiles .forecast-tile .primary-info {
+        display: flex; }
 
 .fork {
   margin: 30px;
