@@ -3,29 +3,48 @@
 # 5-Day Weather Forecast
 A simple application to display 5-day weather forecast using the OpenWeatherMap API. Built on top of my recently created [React-Redux-Sass Starter Kit](https://github.com/Gigacore/React-Redux-Sass-Starter).
 
-### Demo 
+### Demo
 https://www.gigacore.in/demos/react-weather-forecast/
 
-## Pre-requisites 
+## Pre-requisites
 * Node.js 9.8.0 and above
 
 ## Run
-* Clone it
-* ```cd react-weather-forecast```
-* ```npm i```
-* ```npm start```
-* Open ```http://localhost:8080``` to see the app.
+```
+git clone
+cd react-weather-forecast
+npm i
+```
+
+
+## Start the dev server
+```
+
+npm run start:dev
+
+```
 
 ## Build
-From the root dir, run either of the following:
+```
 
-* ```webpack``` bundles all your updates to bundle.js and bundle.css in dist folder.
-* If you insist to automate the build upon appending changes to files, use ```webpack --watch``` 
+npm run build
+
+```
+
+#### Notes:
+* Running the build bundles all your updates to ```bundle.js``` and ```bundle.css``` in dist folder.
+* If you insist to automate the build upon appending changes to files, use ```webpack --watch```
 
 ## Test
+```
 
-* Unit testing can be done manually by executing ```npm run test```
-* Unit testing will be done automatically prior committing the updates to the repo
+npm run test
+
+```
+
+#### Notes:
+* Unit testing can be done manually by executing.
+* Unit testing will be done automatically prior committing the updates to the repo.
 
 ### TODOs
 - [x] Provide an option for user to choose location of their choice by Name, Lat/Long etc
