@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -12,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -64,7 +64,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   .spinner {
     background: url('https://www.gigacore.in/demos/react-weather-forecast/assets/loader.gif') no-repeat;
     background-size: 100%;
@@ -77,11 +77,11 @@ body {
   margin: 0 auto;
   width: 40%;
 
-  @media only screen and (max-width: 64em) { 
+  @media only screen and (max-width: 64em) {
     width: 60%;
   }
 
-  @media only screen and (max-width: 48em) { 
+  @media only screen and (max-width: 48em) {
     width: 100%;
   }
 
@@ -107,7 +107,7 @@ body {
       align-items: center;
       justify-content: center;
       height: 100px;
-  
+
       input {
         font-size: 13px;
         padding: 10px;
@@ -115,19 +115,19 @@ body {
         background: #283593;
         border: none;
         color: #fff;
-        width: 230px; 
+        width: 230px;
         text-transform: uppercase;
-  
+
         &::placeholder {
           color: #fff;
         }
-  
+
         &:focus {
           &::placeholder {
             color: transparent;
           }
         }
-  
+
         &.search {
           width: 30px;
           cursor: pointer;
@@ -154,9 +154,11 @@ body {
     width: 100%;
 
     .forecast-tile {
-      height: 100px;
+      min-height: 100px;
       background: #303f9f;
       margin: 3px;
+      cursor: pointer;
+      overflow: hidden;
 
       .icon {
         width: 100px;
@@ -181,13 +183,13 @@ body {
           padding: 10px 10px;
           font-size: 20px;
           color: #c7cef5;
-          
+
           strong {
             font-weight: bold;
             color: #fff;
           }
         }
-        
+
         .more-info {
           padding: 0 10px;
           font-size: 12px;
@@ -197,16 +199,58 @@ body {
       .primary-info {
         display: flex;
       }
+
+      .detailed-info {
+        height: 100px;
+        width: 100%;
+        -webkit-transition: height 0.20s ease-in;
+        -moz-transition: height 0.20s ease-in;
+        -o-transition: height 0.20s ease-in;
+        transition: height 0.20s ease-in;
+        background: #283593;
+
+        &.collapsed {
+          height: 0;
+        }
+
+        .hourly {
+          display: flex;
+          padding: 25px 0 20px 10px;
+
+          .hourly-info {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            align-items: center;
+            justify-content: center;
+            overflow-x: scroll;
+
+            .hour-temperature {
+              font-size: 18px;
+              font-weight: bold;
+            }
+
+            .hour-of-the-day {
+              font-weight: normal;
+              font-size: 14px;
+            }
+
+            div {
+              padding: 5px 0;
+            }
+          }
+        }
+      }
     }
   }
 }
 
 .fork {
-  margin: 30px; 
+  margin: 30px;
   text-align: center;
   font-size: 12px;
   text-transform: uppercase;
-  
+
   a {
     color: #fff;
     text-decoration: none;

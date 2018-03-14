@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -115,9 +115,11 @@ body {
   .weather-forecast-wrapper .forecast-tiles {
     width: 100%; }
     .weather-forecast-wrapper .forecast-tiles .forecast-tile {
-      height: 100px;
+      min-height: 100px;
       background: #303f9f;
-      margin: 3px; }
+      margin: 3px;
+      cursor: pointer;
+      overflow: hidden; }
       .weather-forecast-wrapper .forecast-tiles .forecast-tile .icon {
         width: 100px;
         height: 100px;
@@ -146,6 +148,34 @@ body {
           font-size: 12px; }
       .weather-forecast-wrapper .forecast-tiles .forecast-tile .primary-info {
         display: flex; }
+      .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info {
+        height: 100px;
+        width: 100%;
+        -webkit-transition: height 0.20s ease-in;
+        -moz-transition: height 0.20s ease-in;
+        -o-transition: height 0.20s ease-in;
+        transition: height 0.20s ease-in;
+        background: #283593; }
+        .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info.collapsed {
+          height: 0; }
+        .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info .hourly {
+          display: flex;
+          padding: 25px 0 20px 10px; }
+          .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info .hourly .hourly-info {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            align-items: center;
+            justify-content: center;
+            overflow-x: scroll; }
+            .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info .hourly .hourly-info .hour-temperature {
+              font-size: 18px;
+              font-weight: bold; }
+            .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info .hourly .hourly-info .hour-of-the-day {
+              font-weight: normal;
+              font-size: 14px; }
+            .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info .hourly .hourly-info div {
+              padding: 5px 0; }
 
 .fork {
   margin: 30px;
