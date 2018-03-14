@@ -3,8 +3,8 @@ import React from "react";
 const DetailedInfo = ({ data }) => {
   return (
     <div className="hourly">
-      {data.map(item => (
-        <div className="hourly-info">
+      {data.map((item, i) => (
+        <div className="hourly-info" key={i}>
           <div className="hour-temperature">
             {Math.round(item.main.temp) + "°C"}
           </div>
