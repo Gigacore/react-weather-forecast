@@ -28,7 +28,7 @@ const DetailedInfo = ({ data }) => {
       {data.map((item, i) => (
         (getHour(item.dt * 1000) > new Date().getHours() && getDate(item.dt * 1000) === getDate()) ? (
           displayMoreInfo(item, i)
-         ) : getHour(item.dt * 1000) < 23 ? (
+         ) : getHour(item.dt * 1000) >= 5 && getHour(item.dt * 1000) <= 23 ? (
            displayMoreInfo(item, i)
          ) : null
       ))}
