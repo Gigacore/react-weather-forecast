@@ -59,15 +59,16 @@ export default class ForecastTiles extends Component {
 
   _showMoreInfo = (index) => {
     const elm = this.refs[`div-${index}`];
-    const allDetailedInfo = document.querySelectorAll(".detailed-info");
 
-    allDetailedInfo.forEach((el) => {
-      if(!el.classList.contains("collapsed")) {
-        el.classList.add("collapsed")
-      }
-    });
+    elm.querySelector(".detailed-info").classList.remove("collapsed");
 
-    elm.querySelector(".detailed-info").classList.toggle("collapsed");
+    if(document.querySelectorAll(".detailed-info.expanded").length > 0) {
+      const el = document.querySelector(".detailed-info.expanded");
+      el.classList.add("collapsed");
+      el.classList.remove("expanded");
+    }
+
+    elm.querySelector(".detailed-info").classList.add("expanded");
   }
 
   render() {
