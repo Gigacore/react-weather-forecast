@@ -96,7 +96,7 @@ export default class ForecastTiles extends Component {
               </div>
               {this._getInfo(item)}
             </div>
-            <div className={"detailed-info collapsed"}>
+            <div className={"detailed-info collapsed"} key={i}>
               <DetailedInfo data={item} />
             </div>
           </div>

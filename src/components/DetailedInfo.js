@@ -1,9 +1,6 @@
 import React from "react";
 
 const DetailedInfo = ({ data }) => {
-
-  console.log(data);
-
   return (
     <div className="hourly">
       {data.map(item => (
