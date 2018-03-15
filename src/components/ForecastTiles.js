@@ -59,16 +59,10 @@ export default class ForecastTiles extends Component {
 
   _showMoreInfo = (index) => {
     const elm = this.refs[`div-${index}`];
+    const expandedElment = document.querySelector(".expanded");
 
-    elm.querySelector(".detailed-info").classList.remove("collapsed");
-
-    if(document.querySelectorAll(".detailed-info.expanded").length > 0) {
-      const el = document.querySelector(".detailed-info.expanded");
-      el.classList.add("collapsed");
-      el.classList.remove("expanded");
-    } else {
-      elm.querySelector(".detailed-info").classList.add("expanded");
-    }
+    elm.classList.add("expanded");
+    expandedElment !== null && expandedElment.classList.remove("expanded");
   }
 
   render() {
@@ -97,7 +91,7 @@ export default class ForecastTiles extends Component {
               </div>
               {this._getInfo(item)}
             </div>
-            <div className={"detailed-info collapsed"} key={i}>
+            <div className={"detailed-info"} key={i}>
               <DetailedInfo data={item} />
             </div>
           </div>

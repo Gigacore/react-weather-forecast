@@ -119,7 +119,18 @@ body {
       background: #303f9f;
       margin: 3px;
       cursor: pointer;
-      overflow: hidden; }
+      overflow: hidden;
+      position: relative; }
+      .weather-forecast-wrapper .forecast-tiles .forecast-tile :after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: 10px;
+        top: 48px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #fff; }
       .weather-forecast-wrapper .forecast-tiles .forecast-tile .icon {
         width: 100px;
         height: 100px;
@@ -148,16 +159,23 @@ body {
           font-size: 12px; }
       .weather-forecast-wrapper .forecast-tiles .forecast-tile .primary-info {
         display: flex; }
+      .weather-forecast-wrapper .forecast-tiles .forecast-tile.collapsed .detailed-info {
+        height: 0; }
+      .weather-forecast-wrapper .forecast-tiles .forecast-tile.expanded .detailed-info {
+        height: 100px; }
+      .weather-forecast-wrapper .forecast-tiles .forecast-tile.expanded :after {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #fff;
+        border-top: none; }
       .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info {
-        height: 100px;
         width: 100%;
+        height: 0;
         -webkit-transition: height 0.20s ease-in;
         -moz-transition: height 0.20s ease-in;
         -o-transition: height 0.20s ease-in;
         transition: height 0.20s ease-in;
         background: #283593; }
-        .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info.collapsed {
-          height: 0; }
         .weather-forecast-wrapper .forecast-tiles .forecast-tile .detailed-info .hourly {
           display: flex;
           padding: 25px 0 20px 10px; }
