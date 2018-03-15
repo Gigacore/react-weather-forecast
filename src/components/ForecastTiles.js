@@ -86,7 +86,7 @@ export default class ForecastTiles extends Component {
               </div>
               {this._getInfo(item)}
             </div>
-            <div className={"detailed-info"} key={i}>
+            <div className="detailed-info" key={i}>
               <DetailedInfo data={item} />
             </div>
           </div>
