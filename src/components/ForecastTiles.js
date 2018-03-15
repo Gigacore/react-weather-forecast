@@ -66,9 +66,9 @@ export default class ForecastTiles extends Component {
       const el = document.querySelector(".detailed-info.expanded");
       el.classList.add("collapsed");
       el.classList.remove("expanded");
+    } else {
+      elm.querySelector(".detailed-info").classList.add("expanded");
     }
-
-    elm.querySelector(".detailed-info").classList.add("expanded");
   }
 
   render() {
