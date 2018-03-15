@@ -15,21 +15,16 @@ const DetailedInfo = ({ data }) => {
     );
   };
 
-  const getHour = (time) => {
-    return new Date(time).getHours();
-  };
-
-  const getDate = (date) => {
-    return date ? new Date(date).getDate() : new Date().getDate();
-  };
+  const getHour = time => time ? new Date(time).getHours() : new Date().getHours();
+  const getDate = date => date ? new Date(date).getDate() : new Date().getDate();
 
   return (
     <div className="hourly">
       {data.map((item, i) => (
-        (getHour(item.dt * 1000) > new Date().getHours() && getDate(item.dt * 1000) === getDate()) ? (
+        (getHour(item.dt * 1000) > getHour() && getDate(item.dt * 1000) === getDate()) ? (
           displayMoreInfo(item, i)
          ) : getHour(item.dt * 1000) >= 5 && getHour(item.dt * 1000) <= 23 ? (
-           displayMoreInfo(item, i)
+            displayMoreInfo(item, i)
          ) : null
       ))}
     </div>

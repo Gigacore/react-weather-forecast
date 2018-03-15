@@ -12,12 +12,6 @@ export default class ForecastTiles extends Component {
 
       return list;
     }, {}));
-
-    // The below commented code reduces unnecessary iteration over an array (mapping) of values to keys.
-    // Instead it is cutshort with use of Object.values() method applied to the value this function returns
-    // TODO: Benchmark the below against Object.values() and determine the fastest execution method. Use: performance.now()
-
-    // return Object.keys(filterByDate).map(key => filterByDate[key];
   };
 
   // Returns week of the day
@@ -57,6 +51,7 @@ export default class ForecastTiles extends Component {
     );
   };
 
+  // Toggles accordion to display hourly weather information
   _showMoreInfo = (index) => {
     const elm = this.refs[`div-${index}`];
     const expandedElment = document.querySelector(".expanded");
