@@ -53,7 +53,7 @@ npm run test
 - [x] Revisit the code to improve performance. Such as sorting, looping, searching etc.
 - [x] Use a proper loading spinner icon on page load
 - [x] Detect location automatically
-- [ ] Display detailed multiple forecasts across the day.
+- [x] Display hourly forecasts.
 - [ ] Add an option to choose Units in either Metric or Imperial.
 - [ ] Display higher-level of weather information such as Wind Speed, Precipitation etc
 - [ ] Fix lint issues and config the eslintrc to support "no-vars-used" for Imports
